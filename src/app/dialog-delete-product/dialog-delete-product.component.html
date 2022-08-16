@@ -1,0 +1,10 @@
+<div class="dialog-container">
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
+    <h1 mat-dialog-title>Delete Product</h1>
+    
+    <div mat-dialog-actions>
+        <button [disabled]="loading" mat-button (click)="dialogRef.close()" >Cancel</button>
+        <button [disabled]="loading" mat-button (click)="deleteProduct()" cdkFocusInitial>Delete</button>
+    </div>
+</div>

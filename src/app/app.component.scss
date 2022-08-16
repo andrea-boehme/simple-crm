@@ -1,0 +1,90 @@
+.mat-drawer-container {
+    height: 100vh;
+    background-color: rgb(145, 247, 221);
+}
+
+.menu-icon {
+    cursor: pointer;
+}
+
+.sidenav {
+    width: 300px;
+    background-color: rgb(198, 239, 237);
+    color: grey;
+}
+
+.logo-container {
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+    padding-left: 16px;
+    padding-right: 16px;
+    min-height: 56px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+        width: 50px;
+        height: 50px;
+        margin-left: 50px;
+    }
+
+    span {
+        font-size: 24px;
+        font-style: italic;
+        color: rgb(65,211,175);
+        margin-right: 100px;
+    }
+}
+
+mat-toolbar, mat-toolbar-row {
+    min-height: 56px;
+    height: 56px;
+    text-align: center;
+    color: grey;
+}
+
+mat-toolbar {
+    background-color: rgb(183, 237, 235);
+}
+
+.title {
+    margin-left: 300px;
+    font-size: 14px;
+}
+
+.menu-items{
+    list-style-type: none;
+    padding: 0px;
+    margin-left: 20px;
+
+    li {
+        padding-left: 16px;
+        padding-right: 16px;
+        margin-top: 24px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        mat-icon {
+            margin-right: 16px;
+        }
+
+        &:hover {
+            background-color: rgba(0,0,0,0.04);
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.router-container {
+    padding-left: 56px;
+    padding-right: 56px;
+    padding-top: 16px;
+
+}
+
+

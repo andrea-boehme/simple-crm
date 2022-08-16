@@ -1,0 +1,39 @@
+<div class="dialog-container">
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+  
+    <h1 mat-dialog-title>Edit product</h1>
+    <div mat-dialog-content>
+      <div>
+        <div class="radio-groups">
+          <div>
+              <label id="example-radio-group-label"></label>
+              <mat-radio-group [disabled]="loading" 
+                              aria-labelledby="example-radio-group-label"
+                              class="example-radio-group m-0"
+                              [(ngModel)]="product.img">
+                  <mat-radio-button class="example-radio-button" 
+                                  *ngFor="let image of images" 
+                                  [value]="image">
+                      <img src="./assets/img/{{image}}.jpg" alt=""> 
+                      
+                  </mat-radio-button>
+              </mat-radio-group>
+          </div>
+      </div>
+        <div>
+          <mat-form-field class="mr-16 wd-100" appearance="outline">
+              <mat-label>Price</mat-label>
+              <input [disabled]="loading" [(ngModel)]= "product.price" matInput>
+            </mat-form-field>
+            <mat-form-field class="mr-16 wd-100" appearance="outline">
+                <mat-label>Amount</mat-label>
+                <input [disabled]="loading" [(ngModel)]= "product.amount" matInput>
+              </mat-form-field>
+        </div>
+        
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button (click)="dialogRef.close();">Cancel</button>
+      <button mat-button (click)="saveProduct()" cdkFocusInitial>Save</button>
+    </div>
+  </div>

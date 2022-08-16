@@ -1,0 +1,22 @@
+<h1>Products</h1>
+<mat-card>
+    <table class="product-table">
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+      </tr>
+      <tr *ngFor="let product of allProducts" [routerLink]="['/product/'] + product.customId">
+        <td><div><img src="../../assets/img/{{ product.name }}.jpg" alt=""></div></td>
+        <td>{{ product.name }}</td>
+       
+      </tr>
+    </table>
+  </mat-card>
+  <div class="div-add-product-button">
+    <button (click)="openDialog()" class="add-product-button" mat-fab color="primary" matTooltip="Add product">
+        <mat-icon>add</mat-icon>
+      </button>
+  </div>
+
+
+

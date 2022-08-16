@@ -1,0 +1,45 @@
+<div class="dialog-container">
+  <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
+  <h1 mat-dialog-title>Add order</h1>
+  <div mat-dialog-content>
+    <div>
+      <mat-form-field class="mr-16" appearance="outline">
+        <mat-label>Number</mat-label>
+        <input [disabled]="loading" [(ngModel)]="order.number" matInput>
+      </mat-form-field>
+      <div>
+        <mat-form-field class="mr-16" appearance="outline">
+          <mat-label>Date</mat-label>
+          <input [disabled]="loading" [(ngModel)]="date" matInput [matDatepicker]="picker1">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <mat-form-field appearance="outline">
+        <mat-label>Customer</mat-label>
+        <input [disabled]="loading" [(ngModel)]="order.customer" matInput>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Product</mat-label>
+        <input [disabled]="loading" [(ngModel)]="order.product" matInput>
+      </mat-form-field>
+      <mat-form-field class="mr-16 wd-100" appearance="outline">
+        <mat-label>Amount</mat-label>
+        <input [disabled]="loading" [(ngModel)]="amount" matInput>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="mr-16 wd-100" appearance="outline">
+        <mat-label>Status</mat-label>
+        <input [disabled]="loading" [(ngModel)]="order.status" matInput>
+      </mat-form-field>
+
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button (click)="dialogRef.close();">Cancel</button>
+      <button mat-button (click)="saveOrder()" cdkFocusInitial>Save</button>
+    </div>
+  </div>

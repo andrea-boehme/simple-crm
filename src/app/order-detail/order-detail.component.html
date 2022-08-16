@@ -1,0 +1,33 @@
+<mat-card class="mt-32" class="order-detail-header">
+
+    <button mat-icon-button class="vert-menu" [matMenuTriggerFor]="orderMenu">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+
+        <mat-menu #orderMenu="matMenu">
+            <button mat-menu-item (click)="editOrderMenu()">Edit</button>
+            <button mat-menu-item class="delete" (click)="deleteOrder()">Delete Order</button>
+        </mat-menu>
+
+    <div>
+        <table class="order-table">
+            <tr>
+              <th>Number</th>
+              <th>Date</th>
+              <th>Customer</th>
+              <th>Product</th>
+              <th>Amount</th> 
+              <th>Status</th>
+            </tr>
+            <tr>
+              <td>{{ order.number }}</td>
+              <td>{{ formattedDate }}</td>
+              <td>{{ order.customer }}</td>
+              <td>{{ order.product }}</td>
+              <td>{{ order.amount }}</td>
+              <td>{{ order.status }}</td>
+            </tr>
+          </table>
+    </div>
+
+</mat-card>

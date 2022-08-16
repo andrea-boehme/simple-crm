@@ -1,0 +1,61 @@
+mat-card {
+    padding-right: 0;
+    padding-left:0;
+}
+ 
+.div-add-order-button {
+    text-align: center;
+}
+
+.add-order-button {
+    position: absolute;
+    right: 56px;
+    bottom: 56px;
+    background-color: rgb(183, 237, 235);
+    height: 60px;
+    width: 60px;
+    color: grey;
+    margin: 0 auto;
+    padding: 0;
+    display: inline-block;
+    line-height: 50px;
+    text-align: center;
+}
+
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+    tr {
+        border-bottom: 1px solid rgba(0,0,0,0.4);
+        cursor: pointer;
+        &:first-child {
+            cursor: unset;
+            &:hover {
+                background-color: unset;
+            }
+        }
+        &:last-child {
+            border-bottom: 0;
+        }
+
+        td {
+            height: 48px;
+            &:first-child {
+                padding-left: 16px;
+            }
+        }
+        th {
+            &:first-child {
+                padding-left: 16px;
+            }
+        }
+        &:hover {
+            background-color: rgba(0,0,0,0.04);
+        }
+    }
+    
+    th {
+        color: grey;
+        text-align: start;
+    }
+}

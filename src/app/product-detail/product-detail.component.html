@@ -1,0 +1,30 @@
+<mat-card class="mt-32" class="product-detail-header">
+
+    <button mat-icon-button class="vert-menu" [matMenuTriggerFor]="productMenu">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+
+        <mat-menu #productMenu="matMenu">
+            <button mat-menu-item (click)="editProductMenu()">Edit</button>
+            <button mat-menu-item class="delete" (click)="deleteProduct()">Delete Product</button>
+        </mat-menu>
+
+    <div class="product-details">
+
+        <table class="product-table">
+            <tr>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Quantity</th>
+            </tr>
+            <tr>
+              <td>{{ product.name }}</td>
+              <td>{{ product.price }}</td>
+              <td>{{ product.amount }}</td>
+            </tr>
+          </table>
+    
+
+    </div>
+
+</mat-card>
