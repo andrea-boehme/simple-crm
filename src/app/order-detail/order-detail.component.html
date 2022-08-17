@@ -4,30 +4,35 @@
         <mat-icon>more_vert</mat-icon>
     </button>
 
-        <mat-menu #orderMenu="matMenu">
-            <button mat-menu-item (click)="editOrderMenu()">Edit</button>
-            <button mat-menu-item class="delete" (click)="deleteOrder()">Delete Order</button>
-        </mat-menu>
+    <mat-menu #orderMenu="matMenu">
+        <button mat-menu-item (click)="editOrderMenu()">Edit</button>
+        <button mat-menu-item class="delete" (click)="deleteOrder()">Delete Order</button>
+    </mat-menu>
 
-    <div>
+    <div class="order-details">
         <table class="order-table">
             <tr>
-              <th>Number</th>
-              <th>Date</th>
-              <th>Customer</th>
-              <th>Product</th>
-              <th>Amount</th> 
-              <th>Status</th>
+                <th>Order Number</th>
+                <th>Date</th>
+                <th>Customer</th>
+                <th>Total</th>
             </tr>
             <tr>
-              <td>{{ order.number }}</td>
-              <td>{{ formattedDate }}</td>
-              <td>{{ order.customer }}</td>
-              <td>{{ order.product }}</td>
-              <td>{{ order.amount }}</td>
-              <td>{{ order.status }}</td>
+                <td>{{ this.activOrder.number }}</td>
+                <td>{{ this.formattedDate }}</td>
+                <td>{{ this.activOrder.customer.firstName }} {{ this.activOrder.customer.lastName }}</td>
+                <td>{{ this.activOrder.total.toFixed(2).replace(".",",") }} €</td>
             </tr>
-          </table>
+        </table>
+        <app-catalog *ngFor="let product of products; let i = index" [numberProduct]="activOrder.quantity[i]"
+            [product]="product" [edit]="false">
+        </app-catalog>
+    </div>
+
+    <div>{{ order.number }}</div>
+    <div class="order-table">
+
+
     </div>
 
 </mat-card>

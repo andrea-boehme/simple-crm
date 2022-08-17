@@ -1,11 +1,33 @@
 <h1>Dashboard</h1>
 
+<mat-card class="mt-32" *ngIf="">
+  <mat-card-title>Customers by Region</mat-card-title>
+  <mat-card-content>
+    
+    <div>
+      <canvas baseChart
+        width="400"
+        height="400"
+        [data]="pieChartData"
+        [type]="pieChartType"
+        [options]="pieChartOptions"
+        >
+      </canvas>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+
 <!--
   To Do
+
 include Product in Orders
 include Quantity in Orders
 change Quantity to Storage in Products
 Back-btn for Orders and Products
+
+Add Product: change to include item in catalog
+Product: button to remove item
 
 Last order in Customer
 Storage in Products reduce when Quantity in Order increase

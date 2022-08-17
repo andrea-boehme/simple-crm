@@ -1,0 +1,18 @@
+<mat-card class="main" [class.edit-style]="edit" *ngIf="edit || numberProduct > 0">
+    <div class="container">
+      <img [src]="product.img" class="hide-edit-950">
+      <span class="prod-name">{{ product.name }}</span>
+    </div>
+    <div class="container">
+      <span class="hide-400 hide-edit-950"> Price: {{ product.price.toFixed(2).replace(".",",") }}€</span>
+      <span> Quantity: {{ numberInBasket }}</span>
+      <div *ngIf="edit">
+        <button mat-mini-fab (click)="removeNumber()" class="btn-remove">
+          <mat-icon>remove</mat-icon>
+        </button>
+        <button mat-mini-fab (click)="addNumber()">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-card>

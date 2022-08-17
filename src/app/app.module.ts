@@ -43,6 +43,8 @@ import {MatRadioModule} from '@angular/material/radio';
 import { DialogDeleteUserComponent } from './dialog-delete-user/dialog-delete-user.component';
 import { DialogDeleteOrderComponent } from './dialog-delete-order/dialog-delete-order.component';
 import { DialogDeleteProductComponent } from './dialog-delete-product/dialog-delete-product.component';
+import { CatalogComponent } from './catalog/catalog.component';
+import { NgChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -64,7 +66,8 @@ import { DialogDeleteProductComponent } from './dialog-delete-product/dialog-del
     DialogEditProductComponent,
     DialogDeleteUserComponent,
     DialogDeleteOrderComponent,
-    DialogDeleteProductComponent
+    DialogDeleteProductComponent,
+    CatalogComponent
   ],
   imports: [
     BrowserModule,
@@ -88,6 +91,7 @@ import { DialogDeleteProductComponent } from './dialog-delete-product/dialog-del
     MatCardModule,
     MatMenuModule,
     MatRadioModule,
+    NgChartsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),

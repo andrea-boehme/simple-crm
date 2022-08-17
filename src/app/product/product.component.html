@@ -1,13 +1,18 @@
 <h1>Products</h1>
 <mat-card>
+
+  <div class="products">
+  </div>
     <table class="product-table">
       <tr>
         <th>Image</th>
-        <th>Name</th>
+        <th>Item</th>
+        <th>Price/kg</th>
       </tr>
-      <tr *ngFor="let product of allProducts" [routerLink]="['/product/'] + product.customId">
-        <td><div><img src="../../assets/img/{{ product.name }}.jpg" alt=""></div></td>
+      <tr *ngFor="let product of products">
+        <td><div><img src="../assets/img/{{ product.name }}.jpg" alt=""></div></td>
         <td>{{ product.name }}</td>
+        <td>{{ product.price.toFixed(2).replace(".",",") }} €</td>
        
       </tr>
     </table>

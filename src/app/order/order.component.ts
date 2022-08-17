@@ -14,6 +14,7 @@ export class OrderComponent implements OnInit {
 
   order = new Order();
   allOrders : any = [];
+  formattedDate : Date;
 
   constructor(public dialog: MatDialog, private firestore: AngularFirestore) { }
 

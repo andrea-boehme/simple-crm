@@ -9,3 +9,15 @@
         width: calc(100% + 48px);
     }
 }
+
+.order-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total {
+    margin-top: 40px;
+    text-align: right;
+    margin-right: 20px;
+}

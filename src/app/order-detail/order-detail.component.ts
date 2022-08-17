@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
-import { orderBy } from 'cypress/types/lodash';
+import { catalog, Catalog } from 'src/models/catalog.interface';
 import { Order } from 'src/models/order.class';
 import { DialogDeleteOrderComponent } from '../dialog-delete-order/dialog-delete-order.component';
 import { DialogEditOrderComponent } from '../dialog-edit-order/dialog-edit-order.component';
@@ -16,6 +16,12 @@ export class OrderDetailComponent implements OnInit {
 
   orderId : any = '';
   order : Order = new Order();
+  
+  products: Catalog[] = catalog; 
+  activOrder: Order = new Order();
+  numBasket = [0,0,0,0];
+  //formattedDate: Date;
+  date: string;
   formattedDate: Date;
 
   constructor(private route: ActivatedRoute, private firestore: AngularFirestore, public dialog: MatDialog) { }
@@ -31,11 +37,17 @@ export class OrderDetailComponent implements OnInit {
   getOrder() {
     if (this.orderId) {
       this.firestore.collection('orders').doc(this.orderId).valueChanges().subscribe((order: any) =>{
-        this.order = new Order(order);
+        this.activOrder = new Order(order);
+        this.numBasket = this.activOrder.quantity;
+        this.formattedDate = new Date(this.order.date.toString());
+        
+
+        //this.formattedDate = new Date(this.order.date);
+    //console.log(this.formattedDate.toString());
       });
     }
-    
-    this.convertDate(this.order.date);
+
+ 
   }
 
   editOrderMenu() {
@@ -44,12 +56,6 @@ export class OrderDetailComponent implements OnInit {
     dialog.componentInstance.orderId = this.orderId;
   }
 
-  convertDate(date) {
-    this.formattedDate = new Date(parseInt(date)) ;
-    return ('0' + this.formattedDate.getDate()).slice(-2) + '-'
-         + ('0' + (this.formattedDate.getMonth()+1)).slice(-2) + '-'
-         + this.formattedDate.getFullYear();
-  }
 
   deleteOrder(){
     const dialog = this.dialog.open(DialogDeleteOrderComponent);

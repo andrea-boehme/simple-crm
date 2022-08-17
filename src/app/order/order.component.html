@@ -3,13 +3,15 @@
     <table class="order-table">
       <tr>
         <th>Number</th>
+        <th>Date</th>
         <th>Customer</th>
         <th>Amount</th>
       </tr>
       <tr *ngFor="let order of allOrders" [routerLink]="['/order/'] + order.customId">
         <td>{{ order.number }}</td>
-        <td>{{ order.customer }}</td>
-        <td>{{ order.amount }}</td>
+        <td>{{ formattedDate }}</td>
+        <td>{{ order.customer.firstName }} {{ order.customer.lastName }}</td>
+        <td>{{ order.total.toFixed(2).replace(".",",") }} €</td>
       </tr>
     </table>
   </mat-card>
