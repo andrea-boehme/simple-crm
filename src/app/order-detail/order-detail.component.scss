@@ -1,6 +1,7 @@
 .order-detail-header {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    width: 100%;
 }
 
 .vert-menu {
@@ -36,9 +37,7 @@
                 padding-left: 16px;
             }
         }
-        &:hover {
-            background-color: rgba(0,0,0,0.04);
-        }
+        
     }
     
     th {

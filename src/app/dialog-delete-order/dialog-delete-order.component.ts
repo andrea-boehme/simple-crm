@@ -16,6 +16,7 @@ export class DialogDeleteOrderComponent implements OnInit {
   orderId: string | undefined;
   loading = false;
 
+
   constructor(public dialogRef: MatDialogRef<DialogDeleteUserComponent>, private firestore : Firestore) { }
 
   ngOnInit(): void {

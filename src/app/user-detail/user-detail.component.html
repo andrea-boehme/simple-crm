@@ -9,7 +9,7 @@
             <button mat-menu-item class="delete" (click)="deleteUser()">Delete User</button>
         </mat-menu>
 
-    <img src="./assets/img/profile.png">
+    <img src="./assets/img/default-profile.jpeg">
 
     <div class="user-details">
         <h2>{{ user.firstName }} {{ user.lastName }}</h2><br>
@@ -18,7 +18,7 @@
 
 </mat-card>
 
-<mat-card class="mt-32">
+<mat-card class="user-detail-address">
 
     <button mat-icon-button class="vert-menu" [matMenuTriggerFor]="addressMenu">
         <mat-icon>more_vert</mat-icon>

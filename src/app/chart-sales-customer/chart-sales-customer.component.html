@@ -1,0 +1,20 @@
+<mat-card>
+  <mat-card-title>Sales by Customer (in €)</mat-card-title>
+  <mat-card-content>
+    <div class="chart-container">
+      <ngx-charts-bar-horizontal 
+      [results]="customerDataGroup" 
+      [gradient]="true"
+      [view]="[400,250]"
+      [legend]="false"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="true"
+      [xAxis]="true"
+      [yAxis]="true"
+      >
+      
+    </ngx-charts-bar-horizontal>
+      
+    </div>
+  </mat-card-content>
+</mat-card>

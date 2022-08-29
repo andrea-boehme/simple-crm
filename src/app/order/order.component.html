@@ -9,9 +9,9 @@
       </tr>
       <tr *ngFor="let order of allOrders" [routerLink]="['/order/'] + order.customId">
         <td>{{ order.number }}</td>
-        <td>{{ formattedDate }}</td>
+        <td>{{ order.formattedDate }}</td>
         <td>{{ order.customer.firstName }} {{ order.customer.lastName }}</td>
-        <td>{{ order.total.toFixed(2).replace(".",",") }} €</td>
+        <td class="align-amount">{{ order.total.toFixed(2).replace(".",",") }} €</td>
       </tr>
     </table>
   </mat-card>

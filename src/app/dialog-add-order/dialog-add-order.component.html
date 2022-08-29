@@ -30,19 +30,17 @@
     </div>
 
     <div class="products">
-      <app-catalog *ngFor="let product of products; let i = index" (numberChange)="changeNumber($event)"
+      <app-catalog *ngFor="let product of products; let i = index" (numberChange)="changeNumber($event)" (amountChange)="changeAmount($event)"
         [product]="product" [productPosition]="i" [edit]="true">
       </app-catalog>
     </div>
 
 
     <div class="total">
-      <span>Total: {{total}}€</span>
+      <span>Total: {{total.toFixed(2).replace(".",",")}}€</span>
     </div>
-    <div>
-
       <div mat-dialog-actions>
-        <button mat-button (click)="dialogRef.close();">Cancel</button>
-        <button mat-button (click)="saveOrder()" cdkFocusInitial>Save</button>
+        <button mat-button (click)="dialogRef.close();" tabindex="-1">Cancel</button>
+        <button mat-button (click)="saveOrder()" cdkFocusInitial tabindex="-1">Save</button>
       </div>
     </div>

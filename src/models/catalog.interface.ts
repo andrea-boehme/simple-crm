@@ -25,4 +25,29 @@ export interface Catalog {
       price: 4.30,
       img: './assets/img/oranges.jpg'
     },
+    {
+      name: 'plums',
+      price: 2.30,
+      img: './assets/img/plums.jpg'
+    },
+    {
+      name: 'avocado',
+      price: 6.30,
+      img: './assets/img/avocado.jpg'
+    },
+    {
+      name: 'pineapple',
+      price: 4.00,
+      img: './assets/img/pineapple.jpg'
+    },
+    {
+      name: 'blueberries',
+      price: 6.60,
+      img: './assets/img/blueberries.jpg'
+    },
+    {
+      name: 'strawberries',
+      price: 3.60,
+      img: './assets/img/strawberries.jpg'
+    }
   ];

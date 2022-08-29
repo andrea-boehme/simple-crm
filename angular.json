@@ -23,6 +23,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "clone-deep"
+           ],
             "outputPath": "dist/simple-crm",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -45,8 +48,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -122,6 +125,5 @@
         }
       }
     }
-  },
-  "defaultProject": "simple-crm"
+  }
 }

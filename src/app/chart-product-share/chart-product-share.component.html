@@ -1,0 +1,30 @@
+<!--
+<mat-card>
+    <mat-card-title>Product Share (in €)</mat-card-title>
+    <mat-card-content>
+      <div class="chart-container">
+        <canvas baseChart
+          [data]="pieChartData"
+          [type]="pieChartType"
+          [options]="pieChartOptions"
+          [plugins]="pieChartPlugins">
+        </canvas>
+      </div>
+    </mat-card-content>
+  </mat-card>
+-->
+
+<mat-card>
+  <mat-card-title>Product Share (in €)</mat-card-title>
+  <mat-card-content>
+    <div class="chart-container">
+      <ngx-charts-pie-chart 
+      [results]="productDataFinalGroup" 
+      [gradient]="true"
+      [view]="[400,200]"
+      [labels]="true" >
+    </ngx-charts-pie-chart>
+      
+    </div>
+  </mat-card-content>
+</mat-card>

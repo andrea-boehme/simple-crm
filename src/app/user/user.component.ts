@@ -17,14 +17,16 @@ export class UserComponent implements OnInit {
   constructor(public dialog: MatDialog, private firestore: AngularFirestore) { }
 
   ngOnInit(): void {
-    this.firestore.collection('users').valueChanges({idField: 'customId'}).subscribe((changes : any) => {
-      console.log(changes);
+    this.firestore.collection('users', ref => ref.orderBy('firstName')).valueChanges({idField: 'customId'}).subscribe((changes : any) => {
+      //console.log(changes);
       this.allUsers = changes;
     });
   }
 
   openDialog() {
-    this.dialog.open(DialogAddUserComponent);
+    this.dialog.open(DialogAddUserComponent, {
+      autoFocus: false
+  });
   }
 
 }

@@ -45,6 +45,11 @@ import { DialogDeleteOrderComponent } from './dialog-delete-order/dialog-delete-
 import { DialogDeleteProductComponent } from './dialog-delete-product/dialog-delete-product.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { NgChartsModule } from 'ng2-charts';
+import { ChartCustomerLocationComponent } from './chart-customer-location/chart-customer-location.component';
+import { NgxChartsModule }from '@swimlane/ngx-charts';
+import { ChartProductShareComponent } from './chart-product-share/chart-product-share.component';
+import { ChartSalesCustomerComponent } from './chart-sales-customer/chart-sales-customer.component';
+import { SalesGrowthComponent } from './chart-sales-growth/chart-sales-growth.component';
 
 
 @NgModule({
@@ -67,7 +72,11 @@ import { NgChartsModule } from 'ng2-charts';
     DialogDeleteUserComponent,
     DialogDeleteOrderComponent,
     DialogDeleteProductComponent,
-    CatalogComponent
+    CatalogComponent,
+    ChartCustomerLocationComponent,
+    ChartProductShareComponent,
+    ChartSalesCustomerComponent,
+    SalesGrowthComponent
   ],
   imports: [
     BrowserModule,
@@ -92,6 +101,7 @@ import { NgChartsModule } from 'ng2-charts';
     MatMenuModule,
     MatRadioModule,
     NgChartsModule,
+    NgxChartsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),

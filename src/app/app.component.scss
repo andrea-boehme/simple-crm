@@ -8,39 +8,51 @@
 }
 
 .sidenav {
-    width: 300px;
+    width: 250px;
     background-color: rgb(198, 239, 237);
     color: grey;
 }
 
 .logo-container {
-    border-bottom: 1px solid rgba(0,0,0,0.04);
-    padding-left: 16px;
-    padding-right: 16px;
-    min-height: 56px;
+    padding: 10px;
+    height: 70px;
+    width: 100px;
     display:flex;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
+    margin-left:400px;
 
     img {
         width: 50px;
         height: 50px;
-        margin-left: 50px;
     }
 
     span {
         font-size: 24px;
         font-style: italic;
         color: rgb(65,211,175);
-        margin-right: 100px;
+        
+    }
+}
+
+
+@media(max-width: 1190px) {
+    .logo-container {
+        margin-left:300px;
+    }
+}
+
+@media(max-width: 900px) {
+    .logo-container {
+        margin-left:200px;
     }
 }
 
 mat-toolbar, mat-toolbar-row {
-    min-height: 56px;
-    height: 56px;
-    text-align: center;
+    height: 85px;
     color: grey;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
 }
 
 mat-toolbar {
@@ -48,8 +60,18 @@ mat-toolbar {
 }
 
 .title {
-    margin-left: 300px;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    margin-left: 10px;
     font-size: 14px;
+
+    span::first-letter {
+        font-weight: bold;
+        font-size: 16px;
+    }
 }
 
 .menu-items{
@@ -84,7 +106,12 @@ mat-toolbar {
     padding-left: 56px;
     padding-right: 56px;
     padding-top: 16px;
-
 }
 
 
+@media(max-width: 1190px) {
+    .router-container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}

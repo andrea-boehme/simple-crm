@@ -18,21 +18,16 @@
                 <th>Total</th>
             </tr>
             <tr>
-                <td>{{ this.activOrder.number }}</td>
-                <td>{{ this.formattedDate }}</td>
-                <td>{{ this.activOrder.customer.firstName }} {{ this.activOrder.customer.lastName }}</td>
-                <td>{{ this.activOrder.total.toFixed(2).replace(".",",") }} €</td>
+                <td>{{ this.order.number }}</td>
+                <td>{{ this.order.formattedDate }}</td>
+                <td>{{ this.order.customer.firstName }} {{ this.order.customer.lastName }}</td>
+                <td>{{ this.order.total.toFixed(2).replace(".",",") }} €</td>
             </tr>
         </table>
-        <app-catalog *ngFor="let product of products; let i = index" [numberProduct]="activOrder.quantity[i]"
+        <app-catalog *ngFor="let product of products; let i = index" [numberProduct]="order.quantity[i]" [amountProduct]="order.amount[i]"
             [product]="product" [edit]="false">
         </app-catalog>
     </div>
 
-    <div>{{ order.number }}</div>
-    <div class="order-table">
-
-
-    </div>
 
 </mat-card>

@@ -18,49 +18,77 @@ export class OrderDetailComponent implements OnInit {
   order : Order = new Order();
   
   products: Catalog[] = catalog; 
-  activOrder: Order = new Order();
-  numBasket = [0,0,0,0];
-  //formattedDate: Date;
+  //activOrder: Order = new Order();
+  numBasket = [0,0,0,0,0,0,0,0,0];
+  amountBasket =[0,0,0,0,0,0,0,0,0];
   date: string;
-  formattedDate: Date;
+  formattedDate: any;
+ 
 
   constructor(private route: ActivatedRoute, private firestore: AngularFirestore, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(paramMap => {
       this.orderId = paramMap.get('id');
-      console.log(this.orderId);
+      //console.log(this.orderId);
       this.getOrder();
     });
   }
 
   getOrder() {
-    if (this.orderId) {
+    //if (this.orderId) {
       this.firestore.collection('orders').doc(this.orderId).valueChanges().subscribe((order: any) =>{
-        this.activOrder = new Order(order);
-        this.numBasket = this.activOrder.quantity;
-        this.formattedDate = new Date(this.order.date.toString());
-        
-
-        //this.formattedDate = new Date(this.order.date);
-    //console.log(this.formattedDate.toString());
+        this.order = new Order(order);
+        //this.order = new Order(order);
+        this.numBasket = this.order.quantity;
+        this.amountBasket = this.order.amount;
       });
-    }
-
- 
+    //}
   }
 
+
   editOrderMenu() {
-    const dialog = this.dialog.open(DialogEditOrderComponent);
-    dialog.componentInstance.order = new Order(this.order.toJson());
+    const dialog = this.dialog.open(DialogEditOrderComponent, {
+      autoFocus: false
+  });
+    dialog.componentInstance.order = new Order(this.order);
     dialog.componentInstance.orderId = this.orderId;
   }
 
 
   deleteOrder(){
-    const dialog = this.dialog.open(DialogDeleteOrderComponent);
-    dialog.componentInstance.order = new Order(this.order.toJson());
+    const dialog = this.dialog.open(DialogDeleteOrderComponent, {
+      autoFocus: false
+  });
+    dialog.componentInstance.order = new Order(this.order);
     dialog.componentInstance.orderId = this.orderId;
   }
 
 }
+
+
+/*
+  saveOrder() {
+    this.firestore
+    .collection('orders')
+    .doc(this.orderId)
+    .update(this.activOrder.toJson())
+  }
+
+  editOrderMenu() {
+    const dialog = this.dialog.open(DialogEditOrderComponent, {
+      autoFocus: false
+  });
+    dialog.componentInstance.order = new Order(this.activOrder);
+    dialog.componentInstance.orderId = this.orderId;
+  }
+
+
+  deleteOrder(){
+    const dialog = this.dialog.open(DialogDeleteOrderComponent, {
+      autoFocus: false
+  });
+    dialog.componentInstance.order = new Order(this.activOrder);
+    dialog.componentInstance.orderId = this.orderId;
+  }
+  */

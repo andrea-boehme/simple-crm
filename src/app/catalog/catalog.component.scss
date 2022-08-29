@@ -1,10 +1,11 @@
 .main {
-    width: 60vw;
-    max-width: 1000px;
+  font-size: 14px;
+    width: 70vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 8px;
+    text-align: center;
     img {
       width: 30px;
       height: 30px;
@@ -12,20 +13,34 @@
       border-radius: 5px;
     }
     button {
+      width: 30px;
+      height: 30px;
       margin-right: 16px ;
       background-color: rgb(183, 237, 235);
       color: grey;
+      font-size: 10px;
+      display: flex;
+      justify-content:center;
+      align-items: center;
+      vertical-align: middle;
     }
   }
-  
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
   .container{
     display: flex;
     align-items: center;
     gap: 64px;
+    font-size: 14px;
+    width: 100%;
   }
   
   .prod-name {
-    font-size: 20px;
+    font-size: 14px;
     font-weight: 500;
     margin-right: 64px;
   }
@@ -65,9 +80,7 @@
       padding-left: 8px;
       padding-right: 0;
   
-      .btn-remove {
-        margin-right: 8px;
-      }
+
   
       .container {
         width: 100%;

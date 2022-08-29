@@ -15,12 +15,11 @@ h1 {
     width: 100%
 }
 
-.mt-32 {
-    margin-top: 32px;
-}
 
 .dialog-container {
     position: relative;
+    margin: 0;
+    padding-bottom: 0;
 
     mat-progress-bar {
         position: absolute;
@@ -29,4 +28,18 @@ h1 {
         left: -24px;
         width: calc(100% + 48px);
     }
+}
+
+/* box sizing */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reset margins */
+
+* {
+    margin: 0;
 }

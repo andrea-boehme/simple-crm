@@ -1,0 +1,17 @@
+<mat-card>
+    <mat-card-title>Sales Growth 2022</mat-card-title>
+    <mat-card-content>
+      <div class="chart-container">
+<ngx-charts-bar-vertical 
+    [view]="[400, 250]"
+    [results]="locationDataGrouped"
+    [legend]="false"
+    [xAxis]="true"
+    [yAxis]="true"
+    [showXAxisLabel]="true"
+    [showYAxisLabel]="true"
+    [gradient]="true">
+</ngx-charts-bar-vertical>
+</div>
+</mat-card-content>
+</mat-card>
