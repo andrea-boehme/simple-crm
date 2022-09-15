@@ -58,3 +58,22 @@
 .delete {
     color: red;
 }
+
+.div-back-button {
+    text-align: center;
+}
+
+.back-button {
+    position: absolute;
+    right: 56px;
+    bottom: 56px;
+    background-color: rgb(183, 237, 235);
+    height: 60px;
+    width: 60px;
+    color: grey;
+    margin: 0 auto;
+    padding: 0;
+    display: inline-block;
+    line-height: 50px;
+    text-align: center;
+}
